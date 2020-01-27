@@ -13,6 +13,7 @@ object Lab_01 extends App {
   println("hello".toUpperCase.toLowerCase)
 
   assert(3+1 == 4)
+
 }
 
 object HelloWorld {
@@ -20,7 +21,4 @@ object HelloWorld {
     println("Hello World".toUpperCase)
   }
 }
-
-
-
 

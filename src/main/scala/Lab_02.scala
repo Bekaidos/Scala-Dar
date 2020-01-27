@@ -198,10 +198,6 @@ object Case extends App{
 
   println(dave.firstName)
   println(dave)
-  println(dave.copy(firstName = "dave") eq dave)
-  println(dave.copy(firstName = "dave") equals  dave)
-  println(dave.copy(firstName = "dave").eq(dave))
-  println(dave.copy(firstName = "dave").equals(dave))
 
   println(new Person("qwe", "qwe") == new Person("qwe", "qwe"))
   println(new Person("qwe", "qwe").equals(new Person("qwe", "qwe")))
