@@ -1,6 +1,6 @@
-for (i <- 1 to 3){
-  println(i)
-}
+1+2
+"3".toInt
+//"foo".toInt
 
 "Hello World".toUpperCase
 

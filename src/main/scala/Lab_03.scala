@@ -1,7 +1,5 @@
-import java.awt.geom.Area
 import java.util.Date
 
-import org.w3c.dom.css.RGBColor
 
 object Lab_03 extends App{
 
