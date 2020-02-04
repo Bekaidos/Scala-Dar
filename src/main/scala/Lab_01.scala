@@ -1,5 +1,5 @@
 object Lab_01 extends App {
-
+  //
   println("foo" take 1)
   println(1.+(2).+(3))
 
