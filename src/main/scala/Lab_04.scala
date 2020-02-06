@@ -1,3 +1,18 @@
+object GenericMap extends App{
+  sealed trait GenericMap[T] {
+
+    def map[T, B](fn: T => B): GenericMap[B] =
+      this match {
+        case GenericPair(head, tail) => GenericPair(fn(head), tail.map(fn))
+        case GenericEnd() => GenericEnd[B]()
+      }
+
+    // TODO: implement map [T, B]  f: T => B
+  }
+  case class GenericEnd[T]() extends GenericMap[T]
+  case class GenericPair[T](head: T, tail: GenericMap[T]) extends GenericMap[T]
+}
+
 object LinkedList extends App{
 
   sealed trait LinkedList[T]{
