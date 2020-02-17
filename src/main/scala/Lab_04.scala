@@ -1,4 +1,4 @@
-object GenericMap extends App{
+/*object GenericMap extends App{
   sealed trait GenericMap[T] {
 
     def map[T, B](fn: T => B): GenericMap[B] =
@@ -11,7 +11,7 @@ object GenericMap extends App{
   }
   case class GenericEnd[T]() extends GenericMap[T]
   case class GenericPair[T](head: T, tail: GenericMap[T]) extends GenericMap[T]
-}
+}*/
 
 object LinkedList extends App{
 

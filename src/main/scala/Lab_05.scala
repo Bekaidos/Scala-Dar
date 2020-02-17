@@ -1,3 +1,5 @@
+package scala.Lab_05
+
 object Lab_05 extends App {
   val sequence = Seq(1, 2, 3)
 

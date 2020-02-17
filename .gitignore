@@ -2,3 +2,4 @@ target/
 project/
 .idea/
 src/test/
+git status
