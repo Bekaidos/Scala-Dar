@@ -1,0 +1,6 @@
+package Lab_08_httpType.repository
+
+sealed trait OperationResult
+case class SuccessfulOperation(msg: String) extends OperationResult
+case class FailedOperation(msg: String) extends OperationResult
+

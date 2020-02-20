@@ -23,9 +23,9 @@ object CatPatternMatching extends App{
   val Quentin = Cat( "Tabby and white", "Curry")
 
   object chipShop {
-    def willServe(cat: Cat): Boolean = cat match {
-      case Cat(_ , "Chips") => true
-      case Cat(_, _) => false
+    def willServe(cat: Cat): Boolean = cat.food match {
+      case "Chips" => true
+      case _ => false
     }
   }
 
