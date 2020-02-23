@@ -32,7 +32,7 @@ class JobRoutes(application: ActorRef[Command])(implicit system: ActorSystem[_])
               }
             },
             get {
-              val maybeJob: Future[Jobs] = application.ask(GetAllJobById(_))
+              val maybeJob: Future[Jobs] = application.ask(GetAllJob(_))
               rejectEmptyResponse {
                 complete(maybeJob)
               }

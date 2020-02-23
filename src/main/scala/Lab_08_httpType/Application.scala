@@ -24,8 +24,8 @@ object Application {
         }
         Behaviors.same
 
-      case GetAllJobById(replyTo) =>
-        repository.getAllJobById().foreach { jobs =>
+      case GetAllJob(replyTo) =>
+        repository.getAllJob().foreach { jobs =>
           replyTo ! jobs
         }
         Behaviors.same

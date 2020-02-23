@@ -35,7 +35,7 @@ case class HumanManager() {
   def deleteHuman(id: Int): Either[FailedResponse, SuccessfulResponse] = {
     humans.get(id) match {
       case Some(human) => {
-        humans = humans.removed(id)
+      //  humans = humans.removed(id)
         Right(SuccessfulResponse(s"${human} removed "))
       }
       case None => Left(FailedResponse("No such human exists, he-he"))

@@ -9,7 +9,7 @@ trait Repository {
 
   def getJob(id: Long): Future[Option[Job]]
 
-  def getAllJobById(): Future[Jobs]
+  def getAllJob(): Future[Jobs]
 
   def putJob(id: Long, job: Job): Future[OperationResult]
 

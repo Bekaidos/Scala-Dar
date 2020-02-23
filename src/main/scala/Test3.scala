@@ -7,7 +7,7 @@ object Test3  extends  App{
   val e = Human("3", 3, "3")
   humans = Map(1 -> q, 2 -> w, 3 -> e)
 
-  humans = humans.removed(1)
+  //humans = humans.removed(1)
 
   var jobs: List[Job] = List.empty
 

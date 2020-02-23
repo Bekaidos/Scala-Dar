@@ -21,7 +21,7 @@ import scala.concurrent.{ExecutionContext, Future}
      jobs.find(_.id == id)
    }
 
-   override def getAllJobById(): Future[Jobs] = Future {
+   override def getAllJob(): Future[Jobs] = Future {
      var jobs2 = Jobs(jobs)
      jobs2
    }

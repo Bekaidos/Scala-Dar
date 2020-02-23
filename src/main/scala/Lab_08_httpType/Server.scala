@@ -1,13 +1,14 @@
 package Lab_08_httpType
 
 
-import Lab_08_httpType.repository.InMemoryRepository
 import akka.actor.typed.scaladsl.Behaviors
 import akka.actor.typed.{Behavior, PostStop}
 import akka.actor.typed.scaladsl.adapter._
 import akka.stream.ActorMaterializer
 import akka.http.scaladsl.Http.ServerBinding
 import akka.http.scaladsl.Http
+import Lab_08_httpType.repository.{CassandraRepository, InMemoryRepository}
+import com.outworkers.phantom.dsl._
 
 import scala.concurrent.{ExecutionContextExecutor, Future}
 import scala.util.{Failure, Success}
@@ -27,10 +28,15 @@ object Server {
     // implicit materializer only required in Akka 2.5
     // in 2.6 having an implicit classic or typed ActorSystem in scope is enough
     implicit val materializer: ActorMaterializer = ActorMaterializer()(ctx.system.toClassic)
-    implicit val ec: ExecutionContextExecutor = ctx.system.executionContext
+    //implicit val ec: ExecutionContextExecutor = ctx.system.executionContext
 
     val inMemoryRepository = InMemoryRepository()
-    val application = ctx.spawn(Application(inMemoryRepository), "application")
+    val cassandraRepository = CassandraRepository()
+
+    cassandraRepository.database.create()
+
+    //val application = ctx.spawn(Application(inMemoryRepository), "application")
+    val application = ctx.spawn(Application(cassandraRepository), "application")
     val routes = new JobRoutes(application)
 
     val serverBinding: Future[Http.ServerBinding] =
